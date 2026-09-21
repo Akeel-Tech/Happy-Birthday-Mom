@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Happy Birthday, Mom</title>
+<meta name="description" content="A cinematic birthday surprise for Mom." />
+
+<!-- Google Fonts (free, optional — site still works if this fails to load) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=DM+Sans:wght@400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='80'%3E%F0%9F%95%AF%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     SCREEN 1 — SURPRISE GATE (only thing visible on first load)
+     ============================================================ -->
+<section class="gate" id="gate" aria-label="Surprise introduction">
+  <div class="gate-particles" id="gateParticles" aria-hidden="true"></div>
+  <div class="gate-glow" aria-hidden="true"></div>
+
+  <div class="gate-inner">
+    <p class="gate-eyebrow"><span class="emoji-bounce">✨</span> A moment, just for you</p>
+    <button class="surprise-btn" id="surpriseBtn" type="button">
+      <span class="surprise-btn-label">🎁 Open the Surprise</span>
+    </button>
+    <p class="gate-hint">tap, and let it unfold 🤍</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCREEN 2 — COUNTDOWN SEQUENCE (hidden until gate is opened)
+     ============================================================ -->
+<section class="countdown-screen" id="countdownScreen" aria-hidden="true" aria-label="Countdown">
+  <div class="balloon-layer" id="balloonLayer" aria-hidden="true"></div>
+  <div class="countdown-particles" id="countdownParticles" aria-hidden="true"></div>
+
+  <div class="cake-stage" id="cakeStage" aria-hidden="true">
+    <svg class="cake-svg" id="cakeSvg" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="150" cy="238" rx="118" ry="14" class="cake-shadow" />
+
+      <!-- base tier -->
+      <rect x="55" y="170" width="190" height="58" rx="6" class="cake-tier cake-tier-base" />
+      <rect x="55" y="170" width="190" height="10" class="cake-band" />
+
+      <!-- top tier -->
+      <rect x="92" y="120" width="116" height="52" rx="6" class="cake-tier cake-tier-top" />
+      <rect x="92" y="120" width="116" height="9" class="cake-band" />
+
+      <!-- drips -->
+      <path d="M92 129 q6 14 0 24 q-6 -10 0 -24 Z" class="cake-drip" />
+      <path d="M150 122 q6 16 0 26 q-6 -10 0 -26 Z" class="cake-drip" />
+      <path d="M206 129 q6 14 0 24 q-6 -10 0 -24 Z" class="cake-drip" />
+
+      <!-- candles -->
+      <g class="candles">
+        <g class="candle" style="--i:0">
+          <rect x="107" y="96" width="6" height="26" class="candle-stick" />
+          <ellipse cx="110" cy="94" rx="6" ry="9" class="flame" />
+        </g>
+        <g class="candle" style="--i:1">
+          <rect x="147" y="90" width="6" height="32" class="candle-stick" />
+          <ellipse cx="150" cy="88" rx="6" ry="9" class="flame" />
+        </g>
+        <g class="candle" style="--i:2">
+          <rect x="187" y="96" width="6" height="26" class="candle-stick" />
+          <ellipse cx="190" cy="94" rx="6" ry="9" class="flame" />
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="countdown-number-wrap">
+    <span class="countdown-number" id="countdownNumber">10</span>
+  </div>
+
+  <div class="burst-layer" id="burstLayer" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================================
+     SCREEN 3 — THE FULL BIRTHDAY WEBSITE (revealed at 0)
+     ============================================================ -->
+<div id="siteContent" class="site-content" hidden>
+
+  <div class="ambient-particles" id="ambientParticles" aria-hidden="true"></div>
+
+  <!-- ---------- 1. BIRTHDAY HERO ---------- -->
+  <header class="hero" id="hero">
+    <div class="hero-content" id="heroContent">
+      <p class="hero-eyebrow"><span class="emoji-bounce">🎂</span> October 8</p>
+
+      <div class="hero-ornament" aria-hidden="true">
+        <span class="hero-crescent"></span>
+        <span class="hero-ornament-line"></span>
+      </div>
+
+      <h1 class="hero-title">Happy Birthday,<br />Mom</h1>
+      <p class="hero-subtitle">Every beautiful thing in my life traces back to you. 🤍</p>
+
+      <a class="scroll-cue" href="#letter" aria-label="Scroll to the letter">
+        <span class="scroll-cue-line" aria-hidden="true"></span>
+        Begin 👇
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ---------- 2. LETTER FROM MY HEART ---------- -->
+    <section class="section" id="letter" aria-labelledby="letter-heading">
+      <div class="section-inner">
+        <p class="section-eyebrow">💌 A Letter From My Heart</p>
+        <h2 id="letter-heading" class="section-title">Words I've Always Wanted to Say</h2>
+
+        <div class="letter-grid">
+          <article class="letter reveal" style="--d:0" lang="ta">
+            <p class="letter-lang-label">தமிழில்</p>
+            <p class="letter-drop">என் அன்பான அம்மாவுக்கு,</p>
+            <p>என் வாழ்க்கையில் அல்லாஹ் எனக்கு அளித்த மிகப் பெரிய அருட்கொடைகளில் நீங்களும் ஒருவர். நான் எவ்வளவு பெரியவனாக வளர்ந்தாலும், உங்கள் அன்பும் அரவணைப்பும் எனக்கு எப்போதும் தேவை.</p>
+            <p>என் சந்தோஷத்தில் மகிழ்ந்து, என் கஷ்டங்களில் எனக்காக பிரார்த்தித்து, நான் இன்று இருக்கும் மனிதனாக வளர்வதற்கு நீங்கள் செய்த தியாகங்களுக்கு நன்றி சொல்ல வார்த்தைகள் போதாது.</p>
+            <p>அம்மா, நீங்கள் எனக்கு ஒரு தாய் மட்டுமல்ல; என் பாதுகாப்பு, என் நம்பிக்கை, என் வீட்டின் அமைதி.</p>
+            <p>அல்லாஹ் உங்களுக்கு நீண்ட ஆயுளையும், நல்ல ஆரோக்கியத்தையும், ஈமானில் உறுதியையும், மன அமைதியையும், எண்ணற்ற மகிழ்ச்சிகளையும் வழங்குவானாக.</p>
+            <p>உங்கள் ஒவ்வொரு நாளும் அழகானதாகவும் பரக்கத் நிறைந்ததாகவும் இருக்கட்டும்.</p>
+            <p>இனிய பிறந்தநாள் வாழ்த்துக்கள் என் அன்பான Mom.</p>
+            <p class="letter-signoff">உங்களை நான் எப்போதும் நேசிப்பேன். 🤍</p>
+          </article>
+
+          <article class="letter reveal" style="--d:1">
+            <p class="letter-lang-label">In English</p>
+            <p class="letter-drop">To my beloved Mom,</p>
+            <p>You are one of the greatest blessings Allah has given me in my life. No matter how much I grow, I will always need your love, your comfort, and your prayers.</p>
+            <p>Words can never be enough to thank you for all the sacrifices you have made, for celebrating my happiness, praying for me through my difficult times, and helping me become the person I am today.</p>
+            <p>Mom, you are not just my mother; you are my comfort, my strength, and the peace of my home.</p>
+            <p>May Allah bless you with a long and beautiful life, good health, strong Iman, peace of heart, and countless moments of happiness.</p>
+            <p>May every day of your life be filled with beauty, barakah, and happiness.</p>
+            <p>Happy Birthday to my beloved Mom.</p>
+            <p class="letter-signoff">I will always love you. 🤍</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- ---------- MY DUA FOR YOU ---------- -->
+    <section class="section section-dua" aria-labelledby="dua-heading">
+      <div class="section-inner narrow">
+        <p class="section-eyebrow">🤲 My Dua For You</p>
+        <h2 id="dua-heading" class="section-title">A Prayer I Carry</h2>
+
+        <div class="reveal" style="--d:0">
+        <p class="dua-arabic" lang="ar" dir="rtl">رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا</p>
+        <p class="dua-translit">Rabbi irhamhuma kama rabbayani saghira</p>
+        </div>
+
+        <div class="dua-meaning reveal" style="--d:1">
+          <p lang="ta"><span>தமிழ்</span> என் இறைவா! நான் சிறுவனாக இருந்தபோது அவர்கள் என்னை வளர்த்தது போல, அவர்களுக்கு நீ அருள்புரிவாயாக.</p>
+          <p><span>English</span> My Lord, have mercy upon them as they raised me when I was small.</p>
+        </div>
+        <p class="dua-source">Qur'an 17:24 · Surah Al-Isra</p>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- ---------- 5. FINAL BIRTHDAY MESSAGE ---------- -->
+    <section class="section section-final" id="final" aria-labelledby="final-heading">
+      <div class="heart-layer" id="heartLayer" aria-hidden="true"></div>
+      <div class="section-inner narrow">
+        <p class="section-eyebrow">🕊️ Before I Go</p>
+        <h2 id="final-heading" class="section-title">Amma</h2>
+
+        <div class="final-message reveal" style="--d:0">
+          <p>Whatever I become in life, a part of everything good in me will always belong to you.</p>
+          <p>May Allah keep you under His mercy, protect you wherever you go, and fill your life with peace, happiness and barakah.</p>
+          <p>Thank you for being my Mom.</p>
+          <p class="letter-signoff">I love you, always. 💛</p>
+        </div>
+
+        <div class="reveal" style="--d:1">
+          <div class="final-crescent" aria-hidden="true"></div>
+          <p class="final-title">Happy Birthday, Mom 🎉</p>
+          <p class="final-date">October 8</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
